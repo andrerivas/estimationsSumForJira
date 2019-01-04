@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
 
-  "name": "Estimations sum for Jira boards",
-  "description": "This extension sums up the remaining time estimates shown in a scrum board of Jira",
-  "version": "0.94",
-  "short_name" : "Jira Estimations Sum",
+  "name": "Estimations sum for Jira boards (6hr days)",
+  "description": "This extension sums up the remaining time estimates shown in a scrum board of Jira. Customized for 6 hour days for Train Jumpers.",
+  "version": "0.95",
+  "short_name" : "Jira Estimations Sum (6hr days)",
 
   "author": "Dirk Räbiger",
   "icons": { "128" : "icon.png" },

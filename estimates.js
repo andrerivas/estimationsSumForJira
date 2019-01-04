@@ -1,4 +1,7 @@
+var HOURS_IN_DAY = 6;
+
 var handleCard = function(card) {
+
 	console.log("new card " + $(card).data("issue-key"));
 
 	// Jira: on-prem
@@ -25,9 +28,9 @@ var handleCard = function(card) {
 			console.log("found card value: " + timeValue + " with unit " + timeUnit);
 
 			switch(timeUnit) {
-				case "w": sumInHours += timeValue * 8 * 5;
+				case "w": sumInHours += timeValue * HOURS_IN_DAY * 5;
 				break;
-				case "d": sumInHours += timeValue * 8;
+				case "d": sumInHours += timeValue * HOURS_IN_DAY;
 				break;
 				case "h": sumInHours += timeValue;
 				break;
@@ -51,12 +54,12 @@ var handleColumn = function(column, columnIdx, sumPerColumn) {
 			sumForThisColumnn += parseFloat(cardValue);
 		}
 	});
-	console.log("SUM FOR COLUMN #" + columnIdx + " is: " + (parseFloat(sumForThisColumnn)/8) + " days");
+	console.log("SUM FOR COLUMN #" + columnIdx + " is: " + (parseFloat(sumForThisColumnn)/HOURS_IN_DAY) + " days");
 	if(typeof sumPerColumn[columnIdx] == "undefined") {
 		sumPerColumn[columnIdx] = 0;
 	}
 	if(typeof sumForThisColumnn != "undefined" && !isNaN(sumForThisColumnn)) {
-		sumPerColumn[columnIdx] += sumForThisColumnn/8;
+		sumPerColumn[columnIdx] += sumForThisColumnn/HOURS_IN_DAY;
 	}
 };
 
