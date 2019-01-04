@@ -2,16 +2,18 @@
   "manifest_version": 2,
 
   "name": "Estimations sum for Jira boards (6hr days)",
-  "description": "This extension sums up the remaining time estimates shown in a scrum board of Jira. Customized for 6 hour days for Train Jumpers.",
+  "description": "This extension sums up the remaining time estimates shown in a scrum board of Jira. Customized for 6 hour days for Train Jumpers. Original code generously licensed and provided by drabiger via https://chrome.google.com/webstore/detail/estimations-sum-for-jira/mmbocjepfajlidapdnikdjebbdfjgbki?hl=en-US.",
   "version": "0.95",
   "short_name" : "Jira Estimations Sum (6hr days)",
 
   "author": "Dirk Räbiger",
   "icons": { "128" : "icon.png" },
 
+  "permissions": ["https://jira.sie.sony.com/*"],
+
   "content_scripts": [
     {
-      "matches": ["http://*/secure/RapidBoard.jspa?*", "https://*/secure/RapidBoard.jspa?*"],
+      "matches": ["http://jira.sie.sony.com/*/secure/RapidBoard.jspa?*", "https://jira.sie.sony.com/*/secure/RapidBoard.jspa?*"],
       "css": ["bootstrap.min.css", "estimates.css"],
       "js": ["jquery.min.js", "estimates.js"],
       "run_at" : "document_end"
